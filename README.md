@@ -9,9 +9,9 @@ So, the logic is "If static file exist, send it. If not - send /index.html". And
 1) start server by node.js executable;
 2) go to localhost:5000 to see the sample site working;
 3) look at "sites" subdirectory to see how it organized. The bootstrap template is placed there at this moment, not good example but enougth;
-*3a) Hint: create symlink to "localhost" directory and name it "127.0.0.1". See that this way also works, to open your resource by IP instead of domain;*
+*Hint: create symlink to "localhost" directory and name it "127.0.0.1". See that this way also works, to open your resource by IP instead of domain;*
 4) create directory with your domain name at "sites" subdirectory and index.html into it;
-*4a) Hint: you can make symlink to real place of directory with your files instead;*
+*Hint: you can make symlink to real place of directory with your files instead;*
 5) place your other required files there;
 6) access server by your domain name and see your site is working;
 7) configure best number of worker threads by modyfying *Environment.workers_per_cpu* in App/main.js file.
