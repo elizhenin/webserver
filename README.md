@@ -7,7 +7,7 @@ So, the logic is "If static file exist, send it. If not - send /index.html". And
 # Usage:
 1) start server by node.js executable;
 2) go to localhost:5000 to see the sample site working;
-3) look at "sites" subtirectory to see how it organized;
+3) look at "sites" subdirectory to see how it organized;
 4) create directory (or symlink to real place with it) with your domain name at "sites" subdirectory and index.html into it;
 5) place your other required files there;
 6) access server by your domain name and see your site is working.
