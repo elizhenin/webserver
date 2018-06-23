@@ -1,0 +1,22 @@
+{
+    "name": "webserver",
+    "version": "1.0.0",
+    "description": "Standalone static webserver",
+    "main": "App/main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/elizhenin/webserver.git"
+    },
+    "author": "Evgeny Lizhenin",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/elizhenin/webserver/issues"
+    },
+    "homepage": "https://github.com/elizhenin/webserver#readme",
+    "dependencies": {
+        "express": "^4.16.3"
+    }
+}
