@@ -13,6 +13,14 @@ if (cluster.isMaster) { // master process
     for (var i = 0; i < cpuCount * Environment.workers_per_cpu; i += 1) {
         cluster.fork();
     }
+    // Listen for dying workers
+    cluster.on('exit', function(worker) {
+
+        // Replace the dead worker
+        console.log('Worker ' + worker.id + ' died and replaced');
+        cluster.fork();
+
+    });
 } else { // worker process
     var express = require('express');
     var path = require('path');
@@ -43,12 +51,3 @@ if (cluster.isMaster) { // master process
         console.log("Listening on " + port);
     });
 }
-
-// Listen for dying workers
-cluster.on('exit', function(worker) {
-
-    // Replace the dead worker
-    console.log('Worker ' + worker.id + ' died and replaced');
-    cluster.fork();
-
-});
