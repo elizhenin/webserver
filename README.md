@@ -1,5 +1,6 @@
 # webserver
-Standalone static webserver on Node.js and Express.js
+Standalone static webserver on Node.js and Express.js.
+
 The main concept is to serve static files and always show index.html instead of 404 error. This feachure is required for application building where CMS feachures such as uri path routing and dynamic page generating is done on browser side by js application.
 So, the logic is "If static file exist, send it. If not - send /index.html". And "index.html" must look at the URI and do the all dirty work.
 
