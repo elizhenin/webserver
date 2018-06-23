@@ -1,11 +1,12 @@
 # webserver
+## About
 Standalone static webserver on Node.js and Express.js.
 
 The main concept is to serve static files and always show index.html instead of 404 error. This feachure is required for application building where CMS tasks such as uri path routing and dynamic page generating is done on browser side by js application.
 
 So, the logic is "If static file exist, send it. If not - send /index.html". And "index.html" must look at the URI and do the all dirty work.
 
-# Usage:
+## Usage:
 1) start server by node.js executable;
 2) go to localhost:5000 to see the sample site working;
 3) look at "sites" subdirectory to see how it organized. The bootstrap template is placed there at this moment, not good example but enougth;
@@ -21,7 +22,7 @@ If you want to change the default port, it can be done in two ways:
 1) set environment variable "PORT" before starting node.js;
 2) change *Environment.listen_port* variable in App/main.js.
 
-# TODO
+## TODO
 1) <del>make multithreaded version</del> - Done.
 2) move setting to external config;
 3) improve documentation;
