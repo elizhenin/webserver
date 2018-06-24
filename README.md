@@ -9,11 +9,11 @@ So, the logic is "If static file exist, send it. If not - send /index.html". And
 ## Usage:
 1) start server by node.js executable;
 2) go to localhost:5000 to see the sample site working;
-3) look at "sites" subdirectory to see how it organized. The bootstrap template is placed there at this moment, not good example but enougth;
+3) look at "sites" subdirectory to see how it organized. The bootstrap-based site template is placed there at this moment, not good example but enougth;
 *Hint: create symlink to "localhost" directory and name it "127.0.0.1". See that this way also works, to open your resource by IP instead of domain;*
-4) create directory with your domain name at "sites" subdirectory and index.html into it;
+4) create directory with your domain name at "sites" subdirectory and "index.html" file into it. This is minimum;
 *Hint: you can make symlink to real place of directory with your files instead;*
-5) place your other required files there;
+5) place your project's other required files in that directory;
 6) access server by your domain name and see your site is working;
 7) configure best number of worker threads by modyfying *Environment.workers_per_cpu* in App/main.js file.
 8) Got it!
@@ -26,4 +26,4 @@ If you want to change the default port, it can be done in two ways:
 1) <del>make multithreaded version</del> - Done.
 2) move setting to external config;
 3) improve documentation;
-4) create working sample of browser-based CMS to demonstrate useage of "always *index.html*" concept.
+4) create working sample of browser-based CMS to demonstrate usage of "always *index.html*" concept.
