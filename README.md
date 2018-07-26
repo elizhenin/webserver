@@ -9,7 +9,7 @@ So, the logic is "If static file exist, send it. If not - send /index.html". And
 ## Usage:
 1) start server by node.js executable;
 2) go to localhost:5000 to see the sample site working;
-3) look at "sites" subdirectory to see how it organized. The bootstrap-based site template is placed there at this moment, not good example but enougth;
+3) look at "sites" subdirectory to see how it organized. The bootstrap-based site template is placed there. It was adopted to be browser-driven mini engine;
 *Hint: create symlink to "localhost" directory and name it "127.0.0.1". See that this way also works, to open your resource by IP instead of domain;*
 4) create directory with your domain name at "sites" subdirectory and "index.html" file into it. This is minimum;
 *Hint: you can make symlink to real place of directory with your files instead;*
