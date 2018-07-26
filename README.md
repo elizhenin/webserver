@@ -26,5 +26,5 @@ If you want to change the default port, it can be done in two ways:
 1) <del>make multithreaded version</del> - Done.
 2) move setting to external config;
 3) improve documentation;
-4) create working sample of browser-based CMS to demonstrate usage of "always *index.html*" concept.
+4) <del>create working sample of browser-based CMS to demonstrate usage of "always *index.html*" concept</del> - Done.
 5) add FastCGI interface for interactivity with ready-to-use PHP code
