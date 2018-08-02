@@ -36,9 +36,9 @@ if (cluster.isMaster) { // master process
                 var requested = path.join(Environment.SITESDIR, domain, req.params[0]);
                 console.log('search for file "' + req.params[0] + '"');
                 var fallback = path.join(Environment.SITESDIR, domain, 'index.html');
-                if (fs.existsSync(requested)) {
+                if (fs.existsSync(requested) && (fs.lstatSync(requested).isFile())) {
                     result = requested;
-                } else if (fs.existsSync(fallback)) {
+                } else if (fs.existsSync(fallback) && (fs.lstatSync(fallback).isFile())) {
                     result = fallback;
                 } else result = path.join(Environment.SITESDIR, 'index.html');
                 console.log('sending "' + result + '"');
