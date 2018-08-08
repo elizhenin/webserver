@@ -21,6 +21,7 @@ So, the logic is "If static file exist, send it. If not - send /index.html". And
 If you want to change the default port, it can be done in two ways:
 1) set environment variable "PORT" before starting node.js;
 2) change *Environment.listen_port* variable in App/main.js.
+
 Hint: to use 80 port with non-root user, here is example for debian/ubuntu:
 sudo apt-get install libcap2-bin
 sudo setcap cap_net_bind_service=+ep `readlink -f \`which node\``
