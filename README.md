@@ -26,7 +26,7 @@ Hint: to use 80 port with non-root user, here is example for debian/ubuntu:
 
 sudo apt-get install libcap2-bin
 
-sudo setcap cap_net_bind_service=+ep `readlink -f \`which node\``
+sudo setcap cap_net_bind_service=+ep ``readlink -f \`which node\```
 
 Theese commands should allow "node" executable to bind ports lower than 1024.
 
