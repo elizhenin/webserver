@@ -3,7 +3,7 @@ Environment.APPDIR = __dirname + "/";
 Environment.ROOTDIR = Environment.APPDIR + "../";
 Environment.SITESDIR = Environment.ROOTDIR + "sites";
 Environment.listen_port = 5000;
-Environment.workers_per_cpu = 4;
+Environment.workers_per_cpu = 1;
 
 var cluster = require('cluster');
 if (cluster.isMaster) { // master process
@@ -34,11 +34,17 @@ if (cluster.isMaster) { // master process
                 console.log('reached request for "' + domain + '"');
                 var result = '';
                 var requested = path.join(Environment.SITESDIR, domain, req.params[0]);
-                console.log('search for file "' + req.params[0] + '"');
                 var fallback = path.join(Environment.SITESDIR, domain, 'index.html');
-                if (fs.existsSync(requested) && (fs.lstatSync(requested).isFile())) {
+                console.log('search for file "' + req.params[0] + '"');
+                if (
+                    fs.existsSync(requested) &&
+                    (!(fs.lstatSync(requested).isDirectory()))
+                ) {
                     result = requested;
-                } else if (fs.existsSync(fallback) && (fs.lstatSync(fallback).isFile())) {
+                } else if (
+                    fs.existsSync(fallback) &&
+                    (!(fs.lstatSync(fallback).isDirectory()))
+                ) {
                     result = fallback;
                 } else result = path.join(Environment.SITESDIR, 'index.html');
                 console.log('sending "' + result + '"');
