@@ -30,7 +30,7 @@ if (cluster.isMaster) { // master process
         .get(/(.+)$/,
             function(req, res) {
                 domain = req.hostname;
-                console.log('Worker ID "' + cluster.worker.id + '"');
+                console.log('process id: "' + cluster.worker.id + '"');
                 console.log('reached request for "' + domain + '"');
                 var result = '';
                 var requested = path.join(Environment.SITESDIR, domain, req.params[0]);
@@ -49,7 +49,7 @@ if (cluster.isMaster) { // master process
                 } else result = path.join(Environment.SITESDIR, 'index.html');
                 console.log('sending "' + result + '"');
                 res.sendFile(result);
-                console.log('Worker ID: ' + cluster.worker.id + ' end of task');
+                console.log('process id: ' + cluster.worker.id + ' end of task');
             });
 
     var port = process.env.PORT || Environment.listen_port;
